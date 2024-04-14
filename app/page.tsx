@@ -1,6 +1,5 @@
-import { Prisma } from "@prisma/client";
-import Image from "next/image";
+import prisma from "./utils/prismaClient";
 
-export default function Home() {
-  return <h1>Hello</h1>;
+export default async function Home() {
+  return <h1>homepage</h1>;
 }
