@@ -25,21 +25,21 @@ model TestType {
   testId       String     @unique @default(uuid())
   testType     String
   testLanguage String
-  discription  String
+  description  String
   UserTest     UserTest[]
   wordsBoundBy String?
   timeBoundBy  String?
 }
 
 model UserTest {
-  userTestId        String   @unique @default(uuid())
-  author            User     @relation(fields: [userId], references: [id])
+  userTestId        String    @unique @default(uuid())
+  author            User      @relation(fields: [userId], references: [id])
   userId            String
-  testType          TestType @relation(fields: [testTypeId], references: [testId])
-  testTypeId        String
+  testType          TestType? @relation(fields: [testTypeId], references: [testId])
+  testTypeId        String?
   wpm               Int
   rawWpm            Int
   accuracy          Int
-  consistancy       Int
+  consistency       Int
   testDurationInSec Int
 }
